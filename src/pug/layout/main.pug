@@ -1,0 +1,20 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title #{title}
+    meta(name="description", content=description)
+    link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet")
+    block head
+
+  body(class=pageClass)
+    .wrap
+      include ../includes/modules/header
+      article
+        block content
+      include ../includes/modules/footer
+
+    block script
