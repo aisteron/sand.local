@@ -1,4 +1,21 @@
-mixin item(title, descr)
-  .item
-    h2.item-title= title
-    p.item-descr= descr
+mixin item(src, name)
+	.item
+		img(src="/assets/img/index/service-items/"+src
+			width="225"
+			height="258"
+			loading="lazy"
+			)
+		span
+			a(href="#")= name
+
+mixin price(src, name, array)
+	.item
+		img(src="/assets/img/price/"+src
+			loading="lazy"
+			)
+		p= name
+		ul
+			each val, index in array
+				li
+					span.key= index
+					span.value= val			

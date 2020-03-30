@@ -58,11 +58,44 @@
 			a
 				color: #fff
 				text-decoration: none
-				padding: 0.5rem 0.5rem
+				padding: 0.5rem 1rem
 				display: block
 				border: 2px solid $black
 				border-radius: 30px										
 				&.active
 					border-color: $scarlet
 					color: $scarlet
+.wrap > .slider
+	height: 400px
+	color: #fff
+	display: flex
+	align-items: flex-end
+	background-repeat: no-repeat !important
+	padding: 0 50px
+	.left
+		padding-bottom: 3rem
+		h2
+			font-size: 2.1rem
+			font-weight: normal
+			line-height: 45px
+
+		ul
+			padding-left: 1rem
+			li
+				line-height: 25px		
+
+	form.right
+		padding-bottom: 5rem
+		min-width: 360px
+		span
+			font-weight: bold
+		input[type="text"]
+			display: block
+			padding: 0.5rem
+			margin: 1rem 0
+		input[type="submit"]
+			padding: 0.5rem 1rem
+			text-transform: uppercase
+			font-weight: bold
+			letter-spacing: 1px						
 
