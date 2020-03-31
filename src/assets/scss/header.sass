@@ -28,10 +28,17 @@
 			&:nth-of-type(2)
 				font-size: 0.9rem		
 	.social
+		@media(max-width: 1080px)
+			display: none
 		.items
 			display: flex
 			justify-content: space-evenly
+	.email
+		@media(max-width: 1080px)
+			display: none		
 	.call
+		@media(max-width: 470px)
+			display: none
 		span:nth-of-type(1)
 			a
 				color: $scarlet
@@ -39,6 +46,11 @@
 	.address
 		a
 			color: $black
+		@media(max-width: 570px)
+			display: none	
+	.hours
+		@media(max-width: 750px)
+			display: none	
 
 
 
@@ -53,8 +65,22 @@
 		list-style: none
 		margin: 0
 		padding: 0.5rem 0
+		@media(max-width: 1140px)
+			justify-content: space-evenly
+		@media(max-width: 570px)
+			justify-content: start
+			overflow-x: auto
+			overflow-y: hidden
+			-webkit-mask-image: linear-gradient(to right, transparent, black 20px, black 90%, transparent)
+			&::-webkit-scrollbar
+				display: none
+
 		li
-			padding-right: 100px		
+			padding-right: 100px
+			&:last-of-type
+				padding-right: 0
+			@media(max-width: 1140px)
+				padding-right: 0			
 			a
 				color: #fff
 				text-decoration: none
@@ -72,6 +98,13 @@
 	align-items: flex-end
 	background-repeat: no-repeat !important
 	padding: 0 50px
+	@media(max-width: 860px)
+		flex-wrap: wrap
+		height: auto
+		background-size: cover !important
+		background-position: -300px !important
+	@media(max-width: 450px)
+		background-position: -450px !important	
 	.left
 		padding-bottom: 3rem
 		h2

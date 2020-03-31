@@ -1,0 +1,27 @@
+footer
+	background-color: $black
+	display: flex
+	flex-wrap: wrap
+	color: #fff
+	justify-content: space-between
+	padding: 1rem 50px
+	align-items: center
+	.logo, .phone, .email, .hours
+		span
+			display: block
+			&:nth-of-type(1)
+				font-weight: bold
+				margin-bottom: 0.5rem
+			&:nth-of-type(2)
+				font-size: 0.9rem	
+	.logo
+		display: flex
+		align-items: center
+		img
+			margin-right: 1rem
+		span:nth-of-type(1)
+			text-transform: uppercase
+	.phone
+		a
+			color: $scarlet
+			text-decoration: none		

@@ -1,17 +1,17 @@
 mixin item(src, name)
 	.item
-		img(src="/assets/img/index/service-items/"+src
+		img(data-src="/assets/img/index/service-items/"+src
 			width="225"
 			height="258"
-			loading="lazy"
+			class="lazyload"
 			)
 		span
 			a(href="#")= name
 
 mixin price(src, name, array)
 	.item
-		img(src="/assets/img/price/"+src
-			loading="lazy"
+		img(data-src="/assets/img/price/"+src
+			class="lazyload"
 			)
 		p= name
 		ul
