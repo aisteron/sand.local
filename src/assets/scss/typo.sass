@@ -1,8 +1,11 @@
+html
+	scroll-behavior: smooth
 body
 	font-family: 'Roboto', sans-serif
 	@media (min-width: 1140px)
 		background: url(/assets/img/sand.jpg)
 		background-repeat: repeat-y
+		background-position: center
 		//background-size: cover
 	@media(max-width: 1140px)
 		margin: 0	
@@ -16,7 +19,9 @@ body
 input[type="submit"] 
 	display: inline-block
 	border: none
-	padding: 1rem 2rem
+	padding: 0.5rem 1rem
+	text-transform: uppercase
+	font-weight: bold
 	margin: 0
 	text-decoration: none
 	background: $scarlet
@@ -34,9 +39,12 @@ input[type="submit"]
 	&:focus,
 		outline: 1px solid #fff
 		outline-offset: -4px
-
 	&:active
 		transform: scale(0.99)
+input[type="text"]
+	display: block		
+	margin: 1rem 0
+	padding: 0.4rem
 details > summary::-webkit-details-marker
 	display: none
 

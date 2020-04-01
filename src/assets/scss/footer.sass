@@ -6,6 +6,10 @@ footer
 	justify-content: space-between
 	padding: 1rem 50px
 	align-items: center
+	@media(max-width: 470px)
+		//flex-direction: column
+		padding: 1rem 20px
+		display: block
 	.logo, .phone, .email, .hours
 		span
 			display: block
@@ -24,4 +28,52 @@ footer
 	.phone
 		a
 			color: $scarlet
-			text-decoration: none		
+			text-decoration: none
+		@media(max-width: 470px)
+			margin: 2rem 0
+			span:nth-of-type(2)
+				display: none
+	.email
+		@media(max-width: 470px)
+			margin: 2rem 0				
+.modals
+	display: none
+	position: fixed
+	z-index: 1
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	overflow: auto
+	background-color: rgb(0,0,0)
+	background-color: rgba(0,0,0,0.4)
+	.callback
+		background-color: #fefefe
+		margin: 15% auto
+		padding: 20px
+		border: 1px solid #888
+		width: 350px
+		animation-name: animatetop
+		animation-duration: 0.4s
+		position: relative
+		form.content
+			position: relative
+			span.close
+				position: absolute
+				right: -3rem
+				color: #fff
+				top: -2rem
+				cursor: pointer
+				@media(max-width: 470px)
+					right: -1.3rem
+					top: -4rem
+			
+
+
+@keyframes animatetop
+  from 
+  	top: -300px
+  	opacity: 0
+  to 
+  	top: 0
+  	opacity: 1	

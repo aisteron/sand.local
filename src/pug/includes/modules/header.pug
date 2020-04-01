@@ -1,6 +1,7 @@
 header
 	.logo
-		img(src='/assets/img/logo.webp')
+		a(href="/")
+			img(src='/assets/img/logo.webp')
 		.desc
 			span пескоструимвсе.бел
 			span пескоструй / покраска
@@ -24,6 +25,23 @@ header
 		span
 			a(href="tel:+375297777976") +375 29 777 79 76
 		span Заказать звонок
+	.undermenu(style="display: none")
+		img(src="/assets/img/menu-open.svg")
+		.inner(style="display: none")
+			span
+				a(href="tel:+375297777976") +375 29 777 79 76
+			ul
+				li
+					a(href="") Услуги			
+				li
+					a(href="") Цены			
+				li
+					a(href="") Доставка	
+				li
+					a(href="") Информация	
+				li
+					a(href="") Вакансии		 	
+
 nav
 	ul
 		li
