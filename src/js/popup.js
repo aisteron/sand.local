@@ -24,8 +24,9 @@
     		}
     	}
 
+        let form = document.querySelector('form.content');
 
-    	submitModal()
+    	submitModal(form)
 
     }
  	
@@ -34,8 +35,8 @@
   });
 
 
- function submitModal() {
-    let form = document.querySelector('form.content');
+ function submitModal(form) {
+
  	form.addEventListener('submit', (e) => {
  		e.preventDefault()
         let data = { phone: form.querySelector('input[type="text"]').value }
@@ -49,10 +50,71 @@
              body: JSON.stringify(data)   
 
         })
+        //.then(response => response.text())
+        //.then(text => console.log(text))
         .then(response => response.text())
-        .then(text => console.log(text))
+        .then(text => {
+            drawResult(form, text)
+        })
 
         
  		
  	})
+ }
+
+
+ function drawResult(el, text) {
+    
+    let string = ``;
+    let hasClose = true;
+
+    if(!el.querySelector('span.close')) {
+        hasClose = false
+    }
+
+    if(text == 'success') {
+           string = `
+            <span class="close">×</span>
+            <img src="/assets/img/success.svg"/>
+            <p><b>Успешно отправлено!</b></p>
+            <p>Ожидайте звонка менеджера</p>
+           `
+        
+    } else {
+        string = `
+            <span class="close">×</span>
+            <img src="/assets/img/warning.svg"/>
+            <p><b>Ошибка отправки!</b></p>
+            <p>Пожалуйста, сообщите нам об этом <br><a href="tel:+375333922900">+375 33 392 29 00</p>
+           `
+    }
+
+
+    el.style.textAlign = 'center'    
+    el.innerHTML = string
+
+    if(hasClose) {
+        el.querySelector('span.close').addEventListener('click', () => {
+            el.parentNode.parentNode.style.display = "none"
+        })
+    } else {
+        el.querySelector('span.close').remove()
+    }
+    
+ }
+
+
+/* header form submit*/
+
+ if(document.querySelector('.slider form.right'))
+ {
+    let form = document.querySelector('.slider form.right');
+    submitModal(form)
+
+ }
+
+ /*master lead form*/
+ if(document.querySelector('.lead form.right')) {
+    let form = document.querySelector('.lead form.right');
+    submitModal(form)
  }

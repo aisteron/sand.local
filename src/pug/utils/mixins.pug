@@ -18,4 +18,19 @@ mixin price(src, name, array)
 			each val, index in array
 				li
 					span.key= index
-					span.value= val			
+					span.value= val
+
+
+mixin fancy(big, small)
+	.item
+		a(data-fancybox="gallery" href="/assets/img/service/"+big)
+			img(data-src="/assets/img/service/"+small
+				width="225"
+				height="258"
+				class="lazyload"
+				)
+mixin info(name)
+	.item
+		p
+			a(href="#")= name
+		a.open(href="#") Открыть	 			
